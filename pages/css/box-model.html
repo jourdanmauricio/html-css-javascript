@@ -9,7 +9,8 @@
   <meta name="description"
     content="Esta página contiene los fundamentos básicos de CSS, utilízala como guía de referencia">
   <link rel="stylesheet" href="/css/menu.css">
-  <link rel="stylesheet" href="/css/box-model.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/css/box-model.css">
   <!-- CDN Material+Icons -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 </head>
@@ -27,14 +28,14 @@
       </label>
       <ul class="menu">
         <li><a href="/index.html">Inicio</a></li>
-        <li><a href="/pages/html.html">HTML</a></li>
-        <li><a class="active" href="/pages/css.html">CSS</a></li>
-        <li><a href="/pages/javascript.html">JavaScript</a></li>
+        <li><a href="/pages/html/html.html">HTML</a></li>
+        <li><a class="active" href="/pages/css/css.html">CSS</a></li>
+        <li><a href="/pages/js/javascript.html">JavaScript</a></li>
         <li><a href="/pages/contacto.html">Contacto</a></li>
       </ul>
     </nav>
   </header>
-  <main>
+  <main class="container">
 
     <section>
       <h1>Modelo de caja en CSS</h1>
@@ -50,7 +51,7 @@
           contenedor.</p>
 
         <p>Documentación: <a href="https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/The_box_model"
-            rel="nofollow" target="_blanc">Modelo de caja</a></p>
+            rel="nofollow" target="_blank">Modelo de caja</a></p>
 
         <p>Propiedades del model-box</p>
 
@@ -62,7 +63,7 @@
         </ol>
 
         <figure>
-          <img src="/assets/images/css-box-model.png" alt="Modelo de caja">
+          <img class="redu" src="/assets/images/css-box-model.png" alt="Modelo de caja">
           <figcaption>Modelo de caja - navegador</figcaption>
         </figure>
 
@@ -166,7 +167,7 @@ p {
       <article class="border">
         <h2>Border</h2>
         <p>El borde posee tres propiedades. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-style"
-            rel="nofollow" target="_blanc">Ejemplos</a></p>
+            rel="nofollow" target="_blank">Ejemplos</a></p>
 
         <ul>
           <li>border-color (color del borde)</li>
@@ -554,7 +555,7 @@ quos, laborum aperiam fugit labore obcaecati odit? Id in corrupti sunt? Quae lab
         </div>
         <br>
 
-        <img src="/assets/images/css-box-sizing_1.png" alt="Propiedad bos-sizing con valor content-box">
+        <img class="redu" src="/assets/images/css-box-sizing_1.png" alt="Propiedad bos-sizing con valor content-box">
 
         <p>Como vemos en el modelo de caja del inspector de elementos, el tamaño de la caja final es de 540px por 190px;
           (10+10+500+10+10 por 10+10+150+10+10). El valor content-box le indica al navegador que el padding, el borde no
@@ -583,7 +584,7 @@ quos, laborum aperiam fugit labore obcaecati odit? Id in corrupti sunt? Quae lab
           quos, laborum aperiam fugit labore obcaecati odit? Id in corrupti sunt? Quae labore sequi quod.
         </div>
         <br>
-        <img src="/assets/images/css-box-sizing_1.png" alt="Propiedad bos-sizing con valor content-box">
+        <img class="redu" src="/assets/images/css-box-sizing_1.png" alt="Propiedad bos-sizing con valor content-box">
 
         <p>Como vemos en el modelo de caja del inspector de elementos el tamaño de la caja es de 500px por 150px;. El
           valor border-box le indica al navegador que incluya el padding, el borde y el contenido como parte de los
@@ -602,7 +603,7 @@ quos, laborum aperiam fugit labore obcaecati odit? Id in corrupti sunt? Quae lab
         <p>Este problema se solucionó con la propedad box-sizing: border-box;. El valor por defecto de la propiedad es
           content-box. La solución es aplicar a todas las cajas del documento el valor border-box pero es muy verboso
           tener que incluir la propiedad en cada elemento. Por ello, Paul Irish propone una <a
-            href="https://www.paulirish.com/2012/box-sizing-border-box-ftw/" rel="nofollow" target="_blanc">técnica</a>
+            href="https://www.paulirish.com/2012/box-sizing-border-box-ftw/" rel="nofollow" target="_blank">técnica</a>
           sencilla para aplicar a todos los elementos de una vez.</p>
 
         <pre>
@@ -697,13 +698,54 @@ html {
       </article>
       <hr>
       <article>
-        <h2>Adición de márgenes horizontales</h2>
-        <p></p>
+        <h2>Centrado de Cajas</h2>
+        <p>Los dispositivos poseen distintas resoluciones, desde algunos muy pequeños hasta los ultra HD. Entonces ¿Cómo
+          podemos desarrollar nuestro sitio para que en dispositivos grandes no se deforme? Una alternativa es centrar
+          nuestro contenido y que queden dos espacios laterales.</p>
+
+        <p>En ocasiones confundimos el centrado del contenido de la caja con el centrado de la caja con respecto a su
+          contenedor. La propiedad text-align: center; centra el contenido en la caja.</p>
+        <p>La manera de centrar una caja es a través de los márgenes. Tenemos que dar el valor auto al margen izquierdo
+          y al derecho. El valor auto le indica al navegador que ajuste lo automáticamente. El navegador, conociendo el
+          ancho de la caja, tomará la cantidad de pixeles restantes y los repartirá automáticamente a izquierda y a
+          derecha de nuestra caja.</p>
+
+        <p>Vamos a presentar el esquema básico de una página web para ver cómo realizar el centrado de las cajas.</p>
+
+        <pre>
+&lt;article class="sitio-web"&gt;
+  &lt;header&gt;Cabecera&lt;/header&gt;
+  &lt;main&gt;Cuerpo principal&lt;/main&gt;
+  &lt;footer&gt;Pie del la página&lt;/footer&gt;
+&lt;/article&gt;
+
+/* CSS */
+.sitio-web {
+  border: thin solid black;
+  background-color: thistle;
+  width: 600px;
+  height: 500px;
+  padding: 16px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+</pre>
+        <article class="sitio-web">
+          <header>Cabecera</header>
+          <main>Cuerpo principal</main>
+          <footer>Pie del la página</footer>
+        </article>
+
+        <p>Erróneamente algunos sitios web poseen la sentencia <mark>margin: 0 auto;</mark> para centrar las cajas, pero
+          en estaríamos sobreescribiendo el margen superior e inferior a 0. Es recomendable aplicar el valor auto a los
+          márgenes izquierdo y derecho sin tocar el superior e inferior.</p>
+
       </article>
 
     </section>
 
-    <a href="/pages/css.html#indice">👆</a>
+    <a href="/pages/css/css.html#indice">👆</a>
     <hr>
 
 

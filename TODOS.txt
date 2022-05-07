@@ -1,0 +1,22 @@
+TRUCOS HTML
+-----------
+
+1) Cambiar encabezado al celular,
+
+<meta name="theme-color" content="#FF6600">
+
+2) Favicon 1024x1024
+
+3) SEO
+<link rel="canonical" href="http://tu-dominio.com/la-url-canonica">
+
+4) indice con resaltado en la sección donde estamos. Y ventana modal CSS
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/:target
+
+li*6>a[target="_blank"]
+
+
+5) Articulo configuración de VSCode. Prettier, pasar a español
+
+6) Contenido de página centrado. 

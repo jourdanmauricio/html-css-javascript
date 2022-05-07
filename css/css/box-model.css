@@ -1,58 +1,3 @@
-html {
-  box-sizing: border-box;
-}
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
-:root {
-  --subtitle-color: #e38646;
-  --bg-gray-light: #f3f3f3;
-  --code-background-block: #343434;
-  --code-background-text: #f3f3f3;
-  --text-color: #222;
-  --blockout-color: #999;
-  --elem-radius: 10px;
-}
-
-a {
-  text-decoration: none;
-}
-
-pre {
-  padding: 1rem;
-  /* margin: 1rem 0 2rem; */
-  background-color: var(--code-background-block);
-  font-family: monospace;
-  border-radius: var(--elem-radius);
-  color: var(--code-background-text);
-  white-space: pre-wrap;
-  /* white-space: pre-line; */
-  word-wrap: break-word;
-  text-align: justify;
-}
-
-blockquote {
-  background: #f9f9f9;
-  border-left: 10px solid #ccc;
-  margin: 1.5em 10px;
-  padding: 0.5em 10px;
-}
-blockquote:before {
-  color: #ccc;
-  /* content: open-quote; */
-  font-size: 4em;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.4em;
-}
-blockquote p {
-  display: inline;
-  font-family: monospace;
-}
-
 p.box-model {
   border-width: 5px;
   border-style: solid;
@@ -173,4 +118,15 @@ p.box-model {
   border: thin solid black;
   margin-top: 16px;
   margin-bottom: 16px;
+}
+
+.sitio-web {
+  border: thin solid black;
+  background-color: thistle;
+  width: 600px;
+  height: 500px;
+  padding: 16px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
