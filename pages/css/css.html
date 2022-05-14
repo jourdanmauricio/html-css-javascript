@@ -79,8 +79,17 @@
         <li><a href="/pages/css/units.html">Unidades de Medida en CSS</a></li>
         <li><a href="/pages/css/variables-functions.html">Variables y Funciones en CSS</a></li>
         <li><a href="/pages/css/fonts-texts.html">Estilos de Fuentes y Textos</a></li>
-
-
+        <li><a href="/pages/css/border-outline.html">Bordes y outlines</a></li>
+        <li><a href="/pages/css/backgrounds.html">Estilos del fondo en CSS</a></li>
+        <li><a href="/pages/css/images.html">Estilos de Imágenes</a></li>
+        <li><a href="/pages/css/style-list.html">Estilos de Listas y Texto en columnas</a></li>
+        <li><a href="/pages/css/tables.html">Tablas en CSS</a></li>
+        <li><a href="/pages/css/forms.html">Formularios en CSS</a></li>
+        <li><a href="/pages/css/visual-effects.html">Efectos visuales en CSS</a></li>
+        <li><a href="/pages/css/scroll-one-page.html">Efectos de scroll (<small>Sitio One Page</small>)</a></li>
+        <li><a href="/pages/css/scroll-snap-slides.html">Ajustes del Scroll (<small>Slides</small>)</a></li>
+        <li><a href="/pages/css/motion.html">Movimiento en CSS</a></li>
+        <li><a href="/pages/css/responsive-design.html">Responsive Design y Arquitectura CSS</a></li>
 
       </ol>
 
@@ -96,7 +105,7 @@
 
       <article>
         <h3 id="sintaxis-basica">Sintaxis básica</h3>
-        <img src="/assets/images/regla_css.gif" alt="Sintaxis de una regla css">
+        <img class="image" src="/assets/images/regla_css.gif" alt="Sintaxis de una regla css">
         <p>Para definir los estilos CSS utiliza reglas. Cada regla consta de dos partes:</p>
         <ul>
           <li><u>Selector</u> <i class="material-icons">arrow_right_alt</i> es el elemento HTML (cualquier etiqueta) al
@@ -999,7 +1008,7 @@ form-pseudoclase *:disabled {
               el inspector de elementos podemos presionar la tecla F12 o con el botón derecho del mouse seleccionar
               Inspeccionar.
               <figure>
-                <img src="/assets/images/css-cascada_1.png"
+                <img class="image" src="/assets/images/css-cascada_1.png"
                   alt="Inspector de elementos mostrando los estilos definidos por user-agent">
                 <figcaption>Inspector de elementos - Estilos user-agent</figcaption>
               </figure>
@@ -1025,13 +1034,13 @@ form-pseudoclase *:disabled {
             skyblue</li>
         </ul>
 
-        <img src="/assets/images/css_cascada_2.png" alt="Documento html">
-        <img src="/assets/images/css_cascada_3.png" alt="Documento css">
+        <img class="image" src="/assets/images/css_cascada_2.png" alt="Documento html">
+        <img class="image" src="/assets/images/css_cascada_3.png" alt="Documento css">
 
         <p><mark>¿De qué color será el h1?</mark>Veamos la respuesta en la solopa estilos del inspector de elementos.
         </p>
 
-        <img src="/assets/images/css_cascada_4.png" alt="Documento css">
+        <img class="image" src="/assets/images/css_cascada_4.png" alt="Documento css">
 
         <p><b>El color será violet</b> porque como vemos (comenzando desde abajo) en la solapa estilos del inspector de
           elementos, el navegador carga sus estilos (usuario-agente. En este caso no asigna color al h1), luego aplica
@@ -1050,7 +1059,7 @@ form-pseudoclase *:disabled {
           <li>Estilos en línea definidos dentro de la etiqueta</li>
         </ol>
         <p>También podemos ver un resumen en la solapa calculados del inspector.</p>
-        <img src="/assets/images/css_cascada_5.png" alt="Documento css">
+        <img class="image" src="/assets/images/css_cascada_5.png" alt="Documento css">
 
       </article>
       <article>
@@ -1063,7 +1072,7 @@ form-pseudoclase *:disabled {
           encontró en navegador, pero como el peso de los identificadores es mayor al peso de las clases se aplicará el
           estilo definido a través del id dejando sin efecto la regla de la cascada.</p>
         <p>El navegador calcula los pesos utilizando la siguiente tabla.</p>
-        <table>
+        <table class="tabla">
           <thead>
             <caption>Peso de los selectores</caption>
             <th>Selector</th>

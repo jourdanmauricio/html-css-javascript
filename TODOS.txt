@@ -20,3 +20,5 @@ li*6>a[target="_blank"]
 5) Articulo configuración de VSCode. Prettier, pasar a español
 
 6) Contenido de página centrado. 
+
+7) trucos. polygon. https://www.programandoamedianoche.com/2019/09/propiedad-clip-path/#:~:text=La%20propiedad%20clip%2Dpath%20en,%C3%A1rea%20que%20corta%20el%20elemento.
