@@ -10,7 +10,7 @@
     content="Esta página contiene los fundamentos básicos de CSS, utilízala como guía de referencia">
   <link rel="stylesheet" href="/css/menu.css">
   <link rel="stylesheet" href="/css/styles.css">
-  <link rel="stylesheet" href="/css/css/grid.css">
+  <!-- <link rel="stylesheet" href="/css/css/grid.css"> -->
   <link rel="stylesheet" href="/css/css/flexbox.css">
   <!-- CDN Material+Icons -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
@@ -48,6 +48,8 @@
       <ul>
         <li><a href="/pages/css/flexbox.html#flexbox-grid">Grid Flexbox</a></li>
         <li><a href="/pages/css/flexbox.html#center-text">Texto Centrado en imagen</a></li>
+        <li><a href="/pages/css/flexbox.html#text-img">Texto e imágenes alternados</a></li>
+        <li><a href="/pages/css/flexbox.html#responsive-without-media">Flexbox responsive sin media queries</a></li>
       </ul>
     </ol>
 
@@ -150,7 +152,7 @@
         <article class="item">Item 3</article>
       </section>
 
-      <h3>flex-grap</h3>
+      <h3>flex-wrap</h3>
       <p>De forma predeterminada, todos los elementos flexibles intentarán encajar en una línea. A través de esta
         propiedad podemos cambiar este comportamiento permitiendo que los elementos se ajusten según sea necesario.</p>
 
@@ -195,7 +197,7 @@
   flex-wrap: nowrap;
 }
 </pre>
-      <section class="container-flex container-flex-nowrap">
+      <!-- <section class="container-flex container-flex-nowrap">
         <article class="item">NewItem 1</article>
         <article class="item">NewItem 2</article>
         <article class="item">NewItem 3</article>
@@ -215,7 +217,7 @@
         <article class="item">NewItem 17</article>
         <article class="item">NewItem 18</article>
         <article class="item">NewItem 19</article>
-      </section>
+      </section> -->
 
       <p>El valor wrap colocará los elementos en la fila hasta y cuando no entren más generará una nueva fila. Siempre
         respetará el valor width o el ancho definido por el contenido.</p>
@@ -656,6 +658,138 @@
         </div>
       </article>
 
+      <h3 id="text-img">Texto e imágenes alternados</h3>
+
+      <pre>
+&lt;section class="container-flex-2"&gt;
+  &lt;article class="flex-item-2"&gt;
+    &lt;!-- flex-order-1 --&gt;
+    &lt;h2&gt;Titulo&lt;/h2&gt;
+    &lt;p&gt;Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus vero molestias officia architecto quas
+      libero suscipit eveniet beatae ut cum, laboriosam doloribus similique ex consequatur, perferendis sequi aut
+      deleniti. Aut!&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;article class="flex-item-2"&gt;
+    &lt;img src="https://placeimg.com/400/400/people" alt="People"&gt;
+  &lt;/article&gt;
+&lt;/section&gt;
+&lt;section class="container-flex-2 flex-row-reverse"&gt;
+  &lt;article class="flex-item-2"&gt;
+    &lt;h2&gt;Titulo&lt;/h2&gt;
+    &lt;p&gt;Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus vero molestias officia architecto quas
+      libero suscipit eveniet beatae ut cum, laboriosam doloribus similique ex consequatur, perferendis sequi aut
+      deleniti. Aut!&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;article class="flex-item-2"&gt;
+    &lt;img src="https://placeimg.com/400/400/arch" alt="arch"&gt;
+  &lt;/article&gt;
+&lt;/section&gt;
+
+/* CSS */
+.container-flex-2 {
+  display: flex;
+  flex-flow: row wrap;
+}
+.flex-item-2 {
+  flex: 0 0 100%;
+}
+@media (min-width: 992px) {
+  .container-flex-2 {
+    display: flex;
+    /* flex-flow: row nowrap; */
+    align-items: center;
+  }
+  .flex-item-2 {
+    flex: 0 0 50%;
+  }
+  .flex-order-1 {
+    order: 1;
+  }
+  .flex-row-reverse {
+    flex-direction: row-reverse;
+  }
+}
+</pre>
+      <section class="container-flex-2">
+        <article class="flex-item-2">
+          <!-- flex-order-1 -->
+          <h2>Titulo</h2>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus vero molestias officia architecto quas
+            libero suscipit eveniet beatae ut cum, laboriosam doloribus similique ex consequatur, perferendis sequi aut
+            deleniti. Aut!</p>
+        </article>
+        <article class="flex-item-2">
+          <img src="https://placeimg.com/400/400/people" alt="People">
+        </article>
+      </section>
+      <section class="container-flex-2 flex-row-reverse">
+        <article class="flex-item-2">
+          <h2>Titulo</h2>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus vero molestias officia architecto quas
+            libero suscipit eveniet beatae ut cum, laboriosam doloribus similique ex consequatur, perferendis sequi aut
+            deleniti. Aut!</p>
+        </article>
+        <article class="flex-item-2">
+          <img src="https://placeimg.com/400/400/arch" alt="arch">
+        </article>
+      </section>
+
+      <h3 id="responsive-without-media">Flexbox responsive sin media queries</h3>
+
+      <pre>
+&lt;section class="flex-responsive"&gt;
+  &lt;article class="flex-responsive-item"&gt;Item Responvivo 1&lt;/article&gt;
+  &lt;article class="flex-responsive-item"&gt;Item Responvivo 2&lt;/article&gt;
+  &lt;article class="flex-responsive-item"&gt;Item Responvivo 3&lt;/article&gt;
+  &lt;article class="flex-responsive-item"&gt;Item Responvivo 4&lt;/article&gt;
+  &lt;article class="flex-responsive-item"&gt;Item Responvivo 5&lt;/article&gt;
+  &lt;article class="flex-responsive-item"&gt;Item Responvivo 6&lt;/article&gt;
+  &lt;article class="flex-responsive-item"&gt;Item Responvivo 7&lt;/article&gt;
+  &lt;article class="flex-responsive-item"&gt;Item Responvivo 8&lt;/article&gt;
+  &lt;article class="flex-responsive-item"&gt;Item Responvivo 9&lt;/article&gt;
+  &lt;article class="flex-responsive-item"&gt;Item Responvivo 10&lt;/article&gt;
+  &lt;article class="flex-responsive-item"&gt;Item Responvivo 11&lt;/article&gt;
+  &lt;article class="flex-responsive-item"&gt;Item Responvivo 12&lt;/article&gt;
+  &lt;article class="flex-responsive-item"&gt;Item Responvivo 13&lt;/article&gt;
+  &lt;article class="flex-responsive-item"&gt;Item Responvivo 14&lt;/article&gt;
+  &lt;article class="flex-responsive-item"&gt;Item Responvivo 15&lt;/article&gt;
+  &lt;article class="flex-responsive-item"&gt;Item Responvivo 16&lt;/article&gt;
+  &lt;article class="flex-responsive-item"&gt;Item Responvivo 17&lt;/article&gt;
+  &lt;article class="flex-responsive-item"&gt;Item Responvivo 18&lt;/article&gt;
+  &lt;article class="flex-responsive-item"&gt;Item Responvivo 19&lt;/article&gt;
+&lt;/section&gt;
+
+/* CSS */
+.flex-responsive {
+  display: flex;
+  flex-flow: row wrap;
+}
+.flex-responsive-item {
+  border: thin solid #f60;
+  flex: 1 1 200px;
+}
+</pre>
+      <section class="flex-responsive">
+        <article class="flex-responsive-item">Item Responvivo 1</article>
+        <article class="flex-responsive-item">Item Responvivo 2</article>
+        <article class="flex-responsive-item">Item Responvivo 3</article>
+        <article class="flex-responsive-item">Item Responvivo 4</article>
+        <article class="flex-responsive-item">Item Responvivo 5</article>
+        <article class="flex-responsive-item">Item Responvivo 6</article>
+        <article class="flex-responsive-item">Item Responvivo 7</article>
+        <article class="flex-responsive-item">Item Responvivo 8</article>
+        <article class="flex-responsive-item">Item Responvivo 9</article>
+        <article class="flex-responsive-item">Item Responvivo 10</article>
+        <article class="flex-responsive-item">Item Responvivo 11</article>
+        <article class="flex-responsive-item">Item Responvivo 12</article>
+        <article class="flex-responsive-item">Item Responvivo 13</article>
+        <article class="flex-responsive-item">Item Responvivo 14</article>
+        <article class="flex-responsive-item">Item Responvivo 15</article>
+        <article class="flex-responsive-item">Item Responvivo 16</article>
+        <article class="flex-responsive-item">Item Responvivo 17</article>
+        <article class="flex-responsive-item">Item Responvivo 18</article>
+        <article class="flex-responsive-item">Item Responvivo 19</article>
+      </section>
     </article>
 
     <hr>

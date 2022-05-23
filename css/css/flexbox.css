@@ -1,7 +1,6 @@
 .container-flex {
   background-color: #888;
   height: 30vh;
-
   display: flex; /* or inline-flex */
 }
 
@@ -45,6 +44,25 @@
   flex: 0 0 100%;
 }
 
+.container-flex-2 {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.flex-item-2 {
+  flex: 0 0 100%;
+}
+
+.flex-responsive {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.flex-responsive-item {
+  border: thin solid #f60;
+  flex: 1 1 200px;
+}
+
 @media (min-width: 576px) {
   .flex-item {
     flex: 0 0 50%;
@@ -60,6 +78,23 @@
 @media (min-width: 992px) {
   .flex-item {
     flex: 0 0 25%;
+  }
+  .container-flex-2 {
+    display: flex;
+    /* flex-flow: row nowrap; */
+    align-items: center;
+  }
+
+  .flex-item-2 {
+    flex: 0 0 50%;
+  }
+
+  .flex-order-1 {
+    order: 1;
+  }
+
+  .flex-row-reverse {
+    flex-direction: row-reverse;
   }
 }
 
@@ -105,4 +140,9 @@ main {
 .hero-image h1 {
   color: #fff;
   font-size: 5vw;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
