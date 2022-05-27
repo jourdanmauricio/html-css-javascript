@@ -48,10 +48,7 @@
       <li><a href="#sizing-keywords">Keywords de tamaño</a></li>
       <li><a href="#sizing-functions">Funciones de tamaño</a></li>
       <li><a href="#repeat">La función repeat() y las palabras clave</a></li>
-
-
-
-      <li><a href="#grid-explicit">Grid Explicita</a></li>
+      <li><a href="#grid-explicit">Grid Explícita</a></li>
       <li><a href="#grid-line-names">Grid con Nombres de Línea</a></li>
       <li><a href="#grid-areas">Grid con Áreas</a></li>
       <li><a href="#grid-implicit">Grid Implícita</a></li>
@@ -66,8 +63,8 @@
       <li><a href="#grid-responsive">Responsive sin Media Queries</a></li>
       <li><a href="#grid-nested">Grids Anidados</a></li>
       <li><a href="#subgrid">Subgrids</a></li>
-      <li><a href="grid_layout.html">Grid Layout con Líneas</a></li>
-      <li><a href="grid_layout_areas.html">Grid Layout con Áreas</a></li>
+      <li><a href="#grid-layout">Grid Layout con Líneas</a></li>
+      <li><a href="#grid-layout-areas">Grid Layout con Áreas</a></li>
       <li><a href="https://jonmircha.com/grid" target="_blank">Más Recursos</a></li>
     </ol>
 
@@ -353,7 +350,7 @@
       <pre>
 .container {
   /* standard */
-  gap: <grid-row-gap> <grid-column-gap>;
+  gap: &lt;grid-row-gap&gt; &lt;grid-column-gap&gt;;
   
 /* Example */
 .container {
@@ -820,6 +817,104 @@ grid-template-columns:
 
       <h2>Grid Explícita</h2>
 
+      <p>Indicamos explícitamente las filas y columnas de la grilla. Aunque inicialmente definamos una determinada
+        cantidad de filas, si se incorporan más elementos en la grilla se posicionarán creando nuevas filas.</p>
+      <pre>
+&lt;section class="container-grid grid-explicit"&gt;
+  &lt;article class="item"&gt;
+    &lt;p&gt;Grid Item 1&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;article class="item"&gt;
+    &lt;p&gt;Grid Item 2&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;article class="item"&gt;
+    &lt;p&gt;Grid Item 3&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;article class="item"&gt;
+    &lt;p&gt;Grid Item 4&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;article class="item"&gt;
+    &lt;p&gt;Grid Item 5&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;article class="item"&gt;
+    &lt;p&gt;Grid Item 6&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;article class="item"&gt;
+    &lt;p&gt;Grid Item 7&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;article class="item"&gt;
+    &lt;p&gt;Grid Item 8&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;article class="item"&gt;
+    &lt;p&gt;Grid Item 9&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;article class="item"&gt;
+    &lt;p&gt;Grid Item 10&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;article class="item"&gt;
+    &lt;p&gt;Grid Item 11&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;article class="item"&gt;
+    &lt;p&gt;Grid Item 12&lt;/p&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, cumque magnam unde consequatur id
+      laudantium dolorem repellat sapiente ut similique, laboriosam provident deserunt assumenda? Optio autem
+      quisquam maxime similique omnis.&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;article class="item"&gt;
+    &lt;p&gt;Grid Item 13&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;article class="item"&gt;
+    &lt;p&gt;Grid Item 14&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;article class="item"&gt;
+    &lt;p&gt;Grid Item 15&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;article class="item"&gt;
+    &lt;p&gt;Grid Item 16&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;article class="item"&gt;
+    &lt;p&gt;Grid Item 17&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;article class="item"&gt;
+    &lt;p&gt;Grid Item 18&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;article class="item"&gt;
+    &lt;p&gt;Grid Item 19&lt;/p&gt;
+  &lt;/article&gt;
+&lt;/section&gt;   
+
+/* CSS */
+.container-grid {
+  margin: 0 auto;
+  /* width: 80%; */
+  /* height: 80vh; */
+  background-color: #222;
+  border: medium solid #000;
+}
+
+.item {
+  padding: 1rem;
+  font-size: 1.25rem;
+  background-color: #666;
+  border: medium solid #999;
+}
+
+.grid-explicit {
+  display: grid;
+  /* grid 3x3 */
+  grid-template-columns: 50% 100px 1fr;
+  grid-template-rows: 3rem 20vh 30%;
+  /* grid 5x4 */
+  /* grid-template-columns: repeat(5, 20%); */
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, auto);
+  /* Gaps */
+  /* row-gap: 10px;
+  column-gap: 10px; */
+  gap: 10px 20px;
+}
+</pre>
+
       <section class="container-grid grid-explicit">
         <article class="item">
           <p>Grid Item 1</p>
@@ -857,8 +952,113 @@ grid-template-columns:
         <article class="item">
           <p>Grid Item 12</p>
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, cumque magnam unde consequatur id
-            laudantium dolorem repellat sapiente ut similique, laboriosam provident deserunt assumenda? Optio autem
-            quisquam maxime similique omnis.</p>
+            laudantium dolorem repellat sapiente ut similique.</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 13</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 14</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 15</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 16</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 17</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 18</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 19</p>
+        </article>
+      </section>
+
+      <p>Si queremos posicionar un elemento en determinadas celdas podemos utilizar las propiedades
+        grid-row-start/grid-row-end y grid-column-start/grid-column-end.</p>
+
+      <p>Colocaremos el elemento 10 ente las líneas 2 y 3, tanto en filas como en columnas. Donde inicialmente se
+        encuentra el item 6, que será desplazado respetando el flujo.</p>
+
+      <p>A través de estas propiedades también podemos combinar celdas y crear áreas.</p>
+
+      <p>Otra forma es utilizar la palabra clave span.</p>
+
+      <pre>
+.grid-combination .item:nth-child(10) {
+  color: red;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  /* Shortcut */
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+}
+
+.grid-combination .item:nth-child(2) {
+  background-color: cyan;
+  /* Combinar celdas */
+  grid-row: 1 / 2;
+  grid-column: 3 / 5;
+}
+
+.grid-combination .item:nth-child(13) {
+  background-color: orangered;
+  /* Area - Shortcut de grid-row y grid-column */
+  /* grid-area: grid-row-start / grid-column-start / grid-row-end / grid-column-end; */
+  grid-area: 3 / 4 / 5 / 6;
+}
+
+.grid-combination .item:nth-child(14) {
+  background-color: greenyellow;
+  /* Abarca 2 filas  */
+  grid-row: span 2;
+  grid-column: span 2;
+}
+</pre>
+
+      <section class="container-grid grid-explicit grid-combination">
+        <article class="item">
+          <p>Grid Item 1</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 2</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 3</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 4</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 5</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 6</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 7</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 8</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 9</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 10</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 11</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 12</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, cumque magnam unde consequatur id
+            laudantium dolorem repellat sapiente ut similique.</p>
         </article>
         <article class="item">
           <p>Grid Item 13</p>
@@ -883,6 +1083,1226 @@ grid-template-columns:
         </article>
       </section>
     </section>
+
+    <hr>
+    <a href="#indice">Tabla de contenido 🔝</a>
+
+    <section id="grid-line-names">
+
+      <h2>Grid con Nombres de Línea</h2>
+
+      <p>Podemos nombrar las líneas del grid utilizando los corchetes []. La propiedad grid-area no funciona
+        correctamente con líneas nombradas.</p>
+
+      <pre>
+&lt;section class="grid-line-names"&gt;
+  &lt;article class="item"&gt;
+    &lt;p&gt;Grid Item 1&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;article class="item"&gt;
+    &lt;p&gt;Grid Item 2&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;article class="item"&gt;
+    &lt;p&gt;Grid Item 3&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;article class="item"&gt;
+    &lt;p&gt;Grid Item 4&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;article class="item"&gt;
+    &lt;p&gt;Grid Item 5&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;article class="item"&gt;
+    &lt;p&gt;Grid Item 6&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;article class="item"&gt;
+    &lt;p&gt;Grid Item 7&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;article class="item"&gt;
+    &lt;p&gt;Grid Item 8&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;article class="item"&gt;
+    &lt;p&gt;Grid Item 9&lt;/p&gt;
+  &lt;/article&gt;
+&lt;/section&gt;
+
+/* CSS */
+.grid-line-names {
+  display: grid;
+  /* Grid 3x3 */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  /* Líneas nombradas */
+  grid-template-columns: [linea-c1] 1fr [linea-c2] 1fr [linea-c3] 1fr [linea-c4];
+  grid-template-rows: [linea-r1] 1fr [linea-r2] 1fr [linea-r3] 1fr [linea-r4];
+}
+.grid-line-names .item:nth-child(3) {
+  color: aqua;
+  grid-row: linea-r3 / linea-r4;
+  grid-column: linea-c1 / linea-c4;
+}
+</pre>
+
+      <section class="grid-line-names">
+        <article class="item">
+          <p>Grid Item 1</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 2</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 3</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 4</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 5</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 6</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 7</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 8</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 9</p>
+        </article>
+      </section>
+
+    </section>
+
+    <hr>
+    <a href="#indice">Tabla de contenido 🔝</a>
+
+    <section id="grid-areas">
+      <h2>Grid con Áreas</h2>
+      <p>Podemos asignar nombres de áreas.</p>
+
+      <pre>
+&lt;section class="container-grid container-grid-areas grid-areas"&gt;
+  &lt;header class="item header"&gt;
+    &lt;p&gt;Header&lt;/p&gt;
+  &lt;/header&gt;
+  &lt;article class="item content"&gt;
+    &lt;p&gt;Content&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;aside class="item sidebar"&gt;
+    &lt;p&gt;SideBar&lt;/p&gt;
+  &lt;/aside&gt;
+  &lt;footer class="item footer"&gt;
+    &lt;p&gt;Footer&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/section&gt;        
+
+/* CSS */
+.container-grid-areas {
+  height: 80vh;
+}
+.grid-areas {
+  display: grid;
+  /* Grid 2x4 */
+  grid-template-columns: 1fr 200px;
+  grid-template-rows: 100px 1fr 1fr 60px;
+  grid-template-areas:
+    "header header"
+    "content sidebar"
+    "content ."
+    "footer footer";
+}
+.header {
+  grid-area: header;
+}
+.content {
+  grid-area: content;
+}
+.sidebar {
+  grid-area: sidebar;
+}
+.footer {
+  grid-area: footer;
+}
+</pre>
+      <section class="container-grid container-grid-areas grid-areas">
+        <header class="item header">
+          <p>Header</p>
+        </header>
+        <article class="item content">
+          <p>Content</p>
+        </article>
+        <aside class="item sidebar">
+          <p>SideBar</p>
+        </aside>
+        <footer class="item footer">
+          <p>Footer</p>
+        </footer>
+      </section>
+    </section>
+
+    <hr>
+    <a href="#indice">Tabla de contenido 🔝</a>
+
+    <section id="grid-implicit">
+      <h2>Grid Implícita</h2>
+
+      <p>Hablamos de grid explícita cuando definimos filas y columnas en el contenedor grid. Pero si no sabemos la
+        cantidad de elementos hijos a incorporar nos referimos a grid implícitas.</p>
+
+      <p>Cuando incorporamos más elementos hijos a un grid que ya no posee lugar, el navegador continua apilando los
+        elementos en la grid aunque ya no se encuentre defnida.</p>
+
+      <p>Si agregamos 19 elementos con una altura fija de 200px a una grid de 4x3 (12 elementos), los primeros 12
+        elementos conservarán su altura y se acomodarán en las 3 filas definidas. Los 7 elementos restantes se agregarán
+        a la grid en nuevas filas pero utilizarán la altura definida por default (la altura de su contenido).</p>
+
+      <pre>
+.grid-implicit {
+  /* Grid 4x3 */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 200px);
+}
+</pre>
+      <section class="container-grid grid-implicit">
+        <article class="item">
+          <p>Grid Item 1</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 2</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 3</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 4</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 5</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 6</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 7</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 8</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 9</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 10</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 11</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 12</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 13</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 14</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 15</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 16</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 17</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 18</p>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam quia tempora sapiente, dicta aliquid nihil
+            aspernatur sunt.</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 19</p>
+        </article>
+      </section>
+
+      <p>La propiedad display (para grid) puede tomar los valores grid e inline-grid. El valor grid otorga el
+        comportamiento de bloque "hacia fuera", en cambio inline-grid se comporta en línea.</p>
+
+    </section>
+
+    <hr>
+    <a href="#indice">Tabla de contenido 🔝</a>
+
+    <section id="grid-flow">
+      <h2>Flujo de la Grid</h2>
+      <p>El flujo natural de grid es apilar los elementos en fila, pero podemos cambiar ese comportamiento a través de
+        la propiedad grid-auto-flow.</p>
+
+      <pre>grid-auto-flow: row | column;</pre>
+
+      <p>Es similar a la propiedad flex-direction de flexbox.</p>
+
+      <pre>
+.grid-flow {
+  /* Grid 5x3 */
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 150px);
+  grid-auto-flow: column;
+  grid-auto-columns: 80px;
+}
+</pre>
+
+      <section class="container-grid grid-flow">
+        <article class="item">
+          <p>Grid Item 1</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 2</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 3</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 4</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 5</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 6</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 7</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 8</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 9</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 10</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 11</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 12</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 13</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 14</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 15</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 16</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 17</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 18</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 19</p>
+        </article>
+      </section>
+
+      <p>Al utilizar grid-auto-flow: column se generan columnas implícitas.</p>
+
+      <p>La propiedad grid-auto-row indica como serán las filas implícitas que se generen. Su valor puede ser auto
+        (ocupara el espacio disponible) o un valor particular. De la misma manera, existe la propiedad
+        grid-auto-columns.
+      </p>
+
+      <h3>Grid dense</h3>
+
+      <p>Para ejemplificar dense vamos a utilizar la misma grid (5 cols x 4 rows) de 19 elementos, y generaremos un
+        desbordamiento del elemento 9 asignando 3 columnas. Como no entra en el grid, pasa a una nueva fila dejando las
+        dos celdas de la fila anterior libres. El navegador respeta el orden de los elementos. Si alguno no entra genera
+        una nueva fila sin adelantar otros elementos a las celdas anteriores vacias.</p>
+
+      <pre>
+.grid-flow-dense {
+  /* Grid 5x4 */
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 100px);
+}
+.grid-flow-dense .item:nth-child(9) {
+  color: cyan;
+  grid-row: span 3;
+  grid-column: span 3;
+}
+</pre>
+      <section class="container-grid grid-flow-dense">
+        <article class="item">
+          <p>Grid Item 1</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 2</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 3</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 4</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 5</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 6</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 7</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 8</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 9</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 10</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 11</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 12</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 13</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 14</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 15</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 16</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 17</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 18</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 19</p>
+        </article>
+      </section>
+
+      <p>Para utilizar el espacio libre que quedó en la grid podemos utilizar la propiedad grid-auto-flow: con el valor
+        row dense</p>
+
+      <pre>grid-auto-flow: row dense;</pre>
+
+      <p>De esta manera, realizamos un cambio en el algorítmo del grid, indicando que posicione en el espacio libre los
+        elementos posteriores que entren.</p>
+
+      <p>Tengamos en cuenta que cuando deseemos una disición por columnas en lugar de filas podemos emplear:
+        grid-auto-flow: column dense;</p>
+
+      <pre>
+.grid-flow-dense {
+  /* Grid 5x4 */
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 100px);
+  grid-auto-flow: row dense;
+}
+.grid-flow-dense .item:nth-child(9) {
+  color: cyan;
+  grid-row: span 3;
+  grid-column: span 3;
+}
+</pre>
+      <section class="container-grid grid-flow-dense grid-flow-dense2">
+        <article class="item">
+          <p>Grid Item 1</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 2</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 3</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 4</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 5</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 6</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 7</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 8</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 9</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 10</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 11</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 12</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 13</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 14</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 15</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 16</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 17</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 18</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 19</p>
+        </article>
+      </section>
+    </section>
+
+    <hr>
+    <a href="#indice">Tabla de contenido 🔝</a>
+
+    <section id="grid-layer">
+      <h2>Grid Items en Capas (superposición)</h2>
+
+      <pre>
+&lt;section class="container-grid grid-layers"&gt;
+  &lt;article class="item"&gt;Grid Item 1&lt;/article&gt;
+  &lt;article class="item"&gt;Grid Item 2&lt;/article&gt;
+  &lt;article class="item"&gt;Grid Item 3&lt;/article&gt;
+  &lt;article class="item"&gt;Grid Item 4&lt;/article&gt;
+  &lt;article class="item"&gt;Grid Item 5&lt;/article&gt;
+&lt;/section&gt;
+
+/* CSS */
+.grid-layers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  height: 50vh;
+}
+.grid-layers .item:nth-child(1) {
+  background-color: #dbea33;
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+}
+.grid-layers .item:nth-child(2) {
+  background-color: #497af8;
+  grid-column: 3 / 5;
+  grid-row: 1 / 3;
+}
+.grid-layers .item:nth-child(3) {
+  background-color: #90e971;
+  grid-column: 1 / 3;
+  grid-row: 3 / 5;
+}
+.grid-layers .item:nth-child(4) {
+  background-color: #f0952a;
+  grid-column: 3 / 5;
+  grid-row: 3 / 5;
+}
+.grid-layers .item:nth-child(5) {
+  background-color: #c92af0;
+  grid-column: 2 / 4;
+  grid-row: 2 / 4;
+  opacity: 0.75;
+}
+</pre>
+
+      <section class="container-grid grid-layers">
+        <article class="item">Grid Item 1</article>
+        <article class="item">Grid Item 2</article>
+        <article class="item">Grid Item 3</article>
+        <article class="item">Grid Item 4</article>
+        <article class="item">Grid Item 5</article>
+      </section>
+    </section>
+
+    <hr>
+    <a href="#indice">Tabla de contenido 🔝</a>
+
+    <section id="grid-order">
+      <h2>Ordenamiento de Grid Items</h2>
+
+      <p>La propiedad order nos permita cambiar el orden en que se colocan los elementos del grid. El valor por default
+        es 0 para todos los hijos y acepta números positivos y negativos. Mientras menor sea el número más al inicio se
+        posicionará el elementos.</p>
+
+      <blockquote>La porpiedad order aplica siempre que el posicionamiento se realice a través del flujo natural del
+        grid. Si posicionamos explícitamente con nombres de áreas o a través de líneas, la propiedad no aplica.
+      </blockquote>
+
+      <pre>
+&lt;section class="container-grid grid-order"&gt;
+  &lt;article class="item"&gt;Grid Item 1&lt;/article&gt;
+  &lt;article class="item"&gt;Grid Item 2&lt;/article&gt;
+  &lt;article class="item"&gt;Grid Item 3&lt;/article&gt;
+  &lt;article class="item"&gt;Grid Item 4&lt;/article&gt;
+  &lt;article class="item"&gt;Grid Item 5&lt;/article&gt;
+&lt;/section&gt;
+
+/* CSS */
+.grid-order {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  height: 30vh;
+}
+.grid-order .item:nth-child(1) {
+  order: 1;
+}
+.grid-order .item:nth-child(2) {
+  order: 2;
+}
+.grid-order .item:nth-child(5) {
+  order: -1;
+}
+</pre>
+      <section class="container-grid grid-order">
+        <article class="item">Grid Item 1</article>
+        <article class="item">Grid Item 2</article>
+        <article class="item">Grid Item 3</article>
+        <article class="item">Grid Item 4</article>
+        <article class="item">Grid Item 5</article>
+      </section>
+    </section>
+
+    <hr>
+    <a href="#indice">Tabla de contenido 🔝</a>
+
+    <section id="grid-align">
+      <h2>Alineamiento de Grid Items</h2>
+
+      <p>La propiedad justify-items define la alineación de los elementos en la fila, en el eje x. El valor por default
+        es strecth (que las celdas se estiren). </p>
+
+      <p>De la misma manera, la propiedad align-items define la alineación verticalmente (eje y) de todos los elementos.
+      </p>
+
+      <p>La alineación es del item con respecto a la celda.</p>
+
+      <p>Cuando deseamos alinear solo un item ocupamos las propiedades justify-self y align-self.</p>
+
+      <pre>
+justify-items: stretch | start | end | center;
+align-items: stretch | start | end | center;
+justify-self: stretch | start | end | center;
+align-self: stretch | start | end | center;
+</pre>
+
+      <pre>
+.grid-align {
+  display: grid;
+  grid-template-columns: repeat(3, 180px);
+  grid-template-rows: repeat(2, 150px);
+  height: 60vh;
+  /* justify-items: stretch | start | end | center; */
+  justify-items: center;
+  /* align-items: stretch | start | end | center; */ 
+  align-items: center;
+}
+.grid-align .item:nth-child(4) {
+  justify-self: start;
+  align-self: start;
+}
+</pre>
+
+      <section class="container-grid grid-align">
+        <article class="item">Grid Item 1</article>
+        <article class="item">Grid Item 2</article>
+        <article class="item">Grid Item 3</article>
+        <article class="item">Grid Item 4</article>
+        <article class="item">Grid Item 5</article>
+      </section>
+
+    </section>
+
+    <hr>
+    <a href="#indice">Tabla de contenido 🔝</a>
+
+    <section id="grid-align-tracks">
+      <h2>Alineamiento de Grid Tracks</h2>
+
+      <p>Podemos alinear filas o columnas (tracks) completas a través de las propiedades justify-content y
+        align-content. El valor por default es start.</p>
+
+      <pre>
+justify-content: start | end | center | stretch | space-around | space-between | space-evenly;    
+align-content: start | end | center | stretch | space-around | space-between | space-evenly; 
+</pre>
+
+      <pre>
+.grid-align-tracks {
+  display: grid;
+  grid-template-columns: repeat(3, 180px);
+  grid-template-rows: repeat(2, 150px);
+  height: 60vh;
+  justify-content: space-evenly;
+  align-content: space-between;
+}
+</pre>
+      <section class="container-grid grid-align-tracks">
+        <article class="item">Grid Item 1</article>
+        <article class="item">Grid Item 2</article>
+        <article class="item">Grid Item 3</article>
+        <article class="item">Grid Item 4</article>
+        <article class="item">Grid Item 5</article>
+      </section>
+    </section>
+
+    <hr>
+    <a href="#indice">Tabla de contenido 🔝</a>
+
+    <section id="grid-min-max">
+      <h2>Tamaños Máximos y Mínimos de Grid Tracks</h2>
+
+      <p>La función min-max define el mínimo y máximo que pueden alcanzar los tracks en el grid. Acepta dos valores: el
+        valor mínimo que podrá tomar el track, y el máximo.</p>
+
+      <p>Existen dos valores especiales para esta función: min-content (se ajustará hasta el mínimo del contenido) y
+        max-content.</p>
+
+      <pre>
+.grid-min-max {
+  display: grid;
+  /* Grid 4cols x ?  No definimos filas */
+  grid-template-columns: repeat(4, minmax(100px, 150px));
+  grid-template-columns: repeat(4, minmax(min-content, 150px));
+  grid-template-columns: repeat(4, minmax(100px, min-content));
+  grid-template-columns: repeat(4, minmax(100px, max-content));
+  grid-template-columns: repeat(4, minmax(max-content, 150px));
+  grid-template-columns: repeat(4, minmax(min-content, max-content));
+  height: 60vh;
+}
+</pre>
+      <section class="container-grid grid-min-max">
+        <article class="item">Grid Item 1</article>
+        <article class="item">Grid Item 2</article>
+        <article class="item">GridItem3</article>
+        <article class="item">Grid Item 4</article>
+        <article class="item">Grid Item 5</article>
+      </section>
+    </section>
+
+    <hr>
+    <a href="#indice">Tabla de contenido 🔝</a>
+
+    <section id="grid-repeat">
+      <h2>Grid con Patrones Repetitivos</h2>
+      <p>Para ejemplificar los patrones utilizaremos la grid de 19 elementos y un patrón repetitivo por filas con un
+        alto de 10 y 20% del viewport. En las columnas aplicamos un patrón de 300px y 200px.</p>
+
+      <pre>
+.grid-repeat {
+  display: grid;
+  /* Grid 4cols x ?  No definimos cantidad de filas */
+  grid-template-columns: repeat(2, 300px 200px);
+  grid-template-rows: repeat(2, 10vh 20vh);
+}
+</pre>
+
+      <section class="container-grid grid-repeat">
+        <article class="item">
+          <p>Grid Item 1</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 2</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 3</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 4</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 5</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 6</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 7</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 8</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 9</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 10</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 11</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 12</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 13</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 14</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 15</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 16</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 17</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 18</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 19</p>
+        </article>
+      </section>
+    </section>
+
+    <hr>
+    <a href="#indice">Tabla de contenido 🔝</a>
+
+    <section id="grid-dynamics">
+      <h2>Grids Dinámicas</h2>
+
+      <p>La propiedad auto-fill rellena la grid con tracks generados dinámicamente, aunque tengamos menor cantidad de
+        elementos los tracks se generan sin contenido. En cambio, la propiedad auto-fit ajusta la grid a los tracks
+        existentes.</p>
+
+      <pre>
+.grid-dynamics {
+  display: grid;
+  /* Grid 4cols x ?  No definimos filas */
+  height: 60vh;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-columns: repeat(auto-fit, 100px);
+  grid-template-columns: repeat(auto-fill, 100px);
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+</pre>
+      <section class="container-grid grid-dynamics">
+        <article class="item">Grid Item 1</article>
+        <article class="item">Grid Item 2</article>
+        <article class="item">Grid Item 3</article>
+        <article class="item">Grid Item 4</article>
+        <article class="item">Grid Item 5</article>
+      </section>
+    </section>
+
+    <hr>
+    <a href="#indice">Tabla de contenido 🔝</a>
+
+    <section id="grid-responsive">
+      <h2>Responsive sin Media Queries</h2>
+
+      <pre>
+.grid-responsive {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  height: 60vh;
+  gap: 1vw 1vw;
+}
+</pre>
+
+      <section class="container-grid grid-responsive">
+        <article class="item">
+          <p>Grid Item 1</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 2</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 3</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 4</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 5</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 6</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 7</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 8</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 9</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 10</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 11</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 12</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 13</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 14</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 15</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 16</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 17</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 18</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 19</p>
+        </article>
+      </section>
+    </section>
+
+    <hr>
+    <a href="#indice">Tabla de contenido 🔝</a>
+
+
+    <section id="grid-nested">
+      <h2>Grids Anidados</h2>
+      <p></p>
+
+      <pre>
+&lt;section class="container-grid grid-nested"&gt;
+  &lt;article class="item grid-nested"&gt;
+    &lt;div class="sub-item"&gt;
+      &lt;p&gt;Grid Subitem Anidado 1&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="sub-item"&gt;
+      &lt;p&gt;Grid Subitem Anidado 2&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="sub-item"&gt;
+      &lt;p&gt;Grid Subitem Anidado 3&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="sub-item"&gt;
+      &lt;p&gt;Grid Subitem Anidado 4&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="sub-item"&gt;
+      &lt;p&gt;Grid Subitem Anidado 5&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/article&gt;
+  &lt;article class="item"&gt;
+    &lt;p&gt;Grid Item 2&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;article class="item"&gt;
+    &lt;p&gt;Grid Item 3&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;article class="item"&gt;
+    &lt;p&gt;Grid Item 4&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;article class="item"&gt;
+    &lt;p&gt;Grid Item 5&lt;/p&gt;
+  &lt;/article&gt;
+&lt;/section&gt;
+
+/* CSS */
+.grid-nested {
+  display: grid;
+  /* Grid 4cols x ?  No definimos filas */
+  grid-template-columns: repeat(3, 1fr);
+}
+.sub-item {
+  padding: 1rem;
+  background-color: #ddd;
+  border: medium solid #ccc;
+}
+</pre>
+
+      <section class="container-grid grid-nested">
+        <article class="item grid-nested">
+          <div class="sub-item">
+            <p>Grid Subitem Anidado 1</p>
+          </div>
+          <div class="sub-item">
+            <p>Grid Subitem Anidado 2</p>
+          </div>
+          <div class="sub-item">
+            <p>Grid Subitem Anidado 3</p>
+          </div>
+          <div class="sub-item">
+            <p>Grid Subitem Anidado 4</p>
+          </div>
+          <div class="sub-item">
+            <p>Grid Subitem Anidado 5</p>
+          </div>
+        </article>
+        <article class="item">
+          <p>Grid Item 2</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 3</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 4</p>
+        </article>
+        <article class="item">
+          <p>Grid Item 5</p>
+        </article>
+      </section>
+    </section>
+
+    <section id="subgrid">
+      <h2>Subgrids</h2>
+      <p>Aún no soportado por los navegadores. <a href="https://caniuse.com/?search=subgrid" rel="nofollow"
+          target="_blank">Can I use</a></p>
+    </section>
+
+    <hr>
+    <a href="#indice">Tabla de contenido 🔝</a>
+
+    <section id="grid-layout">
+      <h2>Grid Layout con Líneas</h2>
+
+      <p>Maquetaremos un layout responsive utilizando las líneas de la grid.</p>
+
+      <pre>
+&lt;body&gt;
+  &lt;header class="header"&gt;
+    &lt;h2&gt;Header&lt;/h2&gt;
+  &lt;/header&gt;
+
+  &lt;nav class="nav"&gt;
+    &lt;h2&gt;Nav&lt;/h2&gt;
+  &lt;/nav&gt;
+
+  &lt;article class="uc-left"&gt;
+    &lt;h2&gt;Upper Content Left&lt;/h2&gt;
+  &lt;/article&gt;
+
+  &lt;article class="uc-center"&gt;
+    &lt;h2&gt;Upper Content Center&lt;/h2&gt;
+  &lt;/article&gt;
+
+  &lt;article class="uc-right"&gt;
+    &lt;h2&gt;Upper Content Right&lt;/h2&gt;
+  &lt;/article&gt;
+
+  &lt;article class="middle"&gt;
+    &lt;h2&gt;Middle Content&lt;/h2&gt;
+  &lt;/article&gt;
+
+  &lt;article class="lower"&gt;
+    &lt;h2&gt;Lower Content&lt;/h2&gt;
+  &lt;/article&gt;
+
+  &lt;footer class="footer"&gt;
+    &lt;h2&gt;Footer&lt;/h2&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+
+/* CSS */        
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 12vh repeat(3, 1fr) 12vh;
+}
+body>* {
+  background-color: #666;
+  border: medium solid #222;
+}
+h2 {
+  text-align: center;
+}
+.header {
+  grid-row: span 1;
+  grid-column: span 6;
+}
+.nav {
+  grid-row: span 1;
+  grid-column: span 6;
+}
+.uc-left {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+.uc-center {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+.uc-right {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+.middle {
+  grid-column: span 3;
+  grid-row: span 1;
+}
+.lower {
+  grid-column: span 3;
+  grid-row: span 1;
+}
+.footer {
+  grid-column: span 6;
+  grid-row: span 6;
+}
+@media screen and (min-width: 990px) {
+  body {
+    grid-template-columns: repeat(5, 1fr);
+    /* grid-template-rows: repeat(5, auto); */
+    grid-template-rows: 12vh repeat(3, 1fr) 12vh;
+  }
+  .header {
+    grid-column: span 5;
+    grid-row: span 1;
+  }  
+  .nav {
+    grid-column: 1 / 2;
+    grid-row: 2 / 5;
+  }
+  .uc-left {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+  .uc-center {
+    grid-column: 3 / 5;
+    grid-row: 2 / 3;
+  }
+  .uc-right {
+    grid-column: 5 / 6;
+    grid-row: 2 / 3;
+  }
+  .middle {
+    grid-column: 2 / 6;
+    grid-row: 3 / 4;
+  }
+  .lower {
+    grid-column: 2 / 6;
+    grid-row: 4 / 5;
+  }
+  .footer {
+    grid-column: span 6;
+    grid-row: span 6;
+  }
+}        
+</pre>
+      <a href="/pages/css/grid_layout.html">Ver ejemplo</a>
+    </section>
+
+    <hr>
+    <a href="#indice">Tabla de contenido 🔝</a>
+
+    <section id="grid-layout-areas">
+      <h2>Grid Layout con Áreas</h2>
+      <p>Realizaremos el mismo layout que en el apartado anterior pero empleando</p>
+      <pre>
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 12vh repeat(3, 1fr) 12vh;
+  grid-template-areas:
+    "header header header header header header"
+    "nav nav nav nav nav nav"
+    "uc-left uc-left uc-center uc-center uc-right uc-right "
+    "middle middle middle lower lower lower"
+    "footer footer footer footer footer footer"
+}
+body>* {
+  background-color: #666;
+  border: medium solid #222;
+}
+h2 {
+  text-align: center;
+}
+.header {
+  grid-area: header;
+}
+.nav {
+  grid-area: nav;
+}
+.uc-left {
+  grid-area: uc-left;
+}
+.uc-center {
+  grid-area: uc-center;
+}
+.uc-right {
+  grid-area: uc-right;
+}
+.middle {
+  grid-area: middle;
+}
+.lower {
+  grid-area: lower;
+}
+.footer {
+  grid-area: footer;
+}
+@media screen and (min-width: 990px) {
+  body {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 12vh repeat(3, 1fr) 12vh;
+    grid-template-areas:
+      "header header header header header"
+      "nav uc-left uc-center uc-center uc-right"
+      "nav middle middle middle middle"
+      "nav lower lower lower lower"
+      "footer footer footer footer footer";
+  }
+}
+</pre>
+
+      <a href="/pages/css/grid_layout_areas.html">Ver ejemplo</a>
+    </section>
+
+
 
     <hr>
     <a href="#indice">Tabla de contenido 🔝</a>
